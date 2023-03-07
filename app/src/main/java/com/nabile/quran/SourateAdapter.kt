@@ -2,10 +2,12 @@ package com.nabile.quran
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
 
@@ -29,6 +31,13 @@ class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<
         sourateViewHolder.sourateIndex.text = sourate.positionSourate.toString() + ": "
         sourateViewHolder.sourateNameInFrench.text = sourate.frenchName +" ("+sourate.phoneticName+")"
         sourateViewHolder.sourateNameInArabic.text = sourate.arabicName
+
+        sourateViewHolder.itemView.setOnClickListener {
+            val intent = Intent(context, SourateActivity::class.java)
+            intent.putExtra("sourate",sourate.positionSourate.toString())
+            intent.putExtra("title",sourate.frenchName +" ("+sourate.phoneticName+")")
+            ContextCompat.startActivity(context, intent, null)
+        }
 
     }
 
