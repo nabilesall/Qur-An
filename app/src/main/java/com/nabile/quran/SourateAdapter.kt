@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
 
-class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<SourateObject>, val jsonObject : JSONObject) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<SourateObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return SourateViewHolder(

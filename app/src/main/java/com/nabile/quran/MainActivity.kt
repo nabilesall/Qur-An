@@ -21,10 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         listOfSourate = ArrayList()
-        sourateAdapter = SourateAdapter(this, listOfSourate,getData())
+        sourateAdapter = SourateAdapter(this, listOfSourate)
         sourateRecyclerView.adapter = sourateAdapter
         sourateRecyclerView.layoutManager = LinearLayoutManager(this)
 
+        getData()
         sourateAdapter.notifyDataSetChanged()
 
     }
