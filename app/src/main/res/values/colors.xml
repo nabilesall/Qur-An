@@ -5,6 +5,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="principal">#8AF6CE</color>
 
     <color name="background_color">#CDC765</color>
 </resources>
