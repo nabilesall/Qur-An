@@ -29,6 +29,7 @@
     <TextView
         android:id="@+id/sourateNameInFrench"
         android:layout_width="wrap_content"
+        android:maxWidth="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="nom en arabe"
