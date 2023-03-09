@@ -4,24 +4,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
-import org.json.JSONArray
+import kotlinx.android.synthetic.main.activity_liste_sourates.*
 import org.json.JSONObject
 import java.io.InputStream
 
-class MainActivity : AppCompatActivity() {
+class ListeSouratesActivity : AppCompatActivity() {
 
-    lateinit var listOfSourate : ArrayList<SourateObject>
-    lateinit var sourateAdapter : SourateAdapter
-    lateinit var jsonObject : JSONObject
-
+    private lateinit var listOfSourate : ArrayList<SourateObject>
+    private lateinit var sourateAdapter : SourateAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_liste_sourates)
 
         listOfSourate = ArrayList()
         sourateAdapter = SourateAdapter(this, listOfSourate)
+
         sourateRecyclerView.adapter = sourateAdapter
         sourateRecyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -33,10 +31,10 @@ class MainActivity : AppCompatActivity() {
     private fun getData(): JSONObject {
         val inputStream : InputStream = assets.open("quran.json")
         val json = inputStream.bufferedReader().use { it.readText() }
-        var jsonObject = JSONObject(json)
+        val jsonObject = JSONObject(json)
 
         try {
-            var jsonArray = jsonObject.getJSONArray("sourates")
+            val jsonArray = jsonObject.getJSONArray("sourates")
 
             for (i in 0..jsonArray.length()){
                 val sourates = jsonArray.getJSONObject(i)
@@ -44,17 +42,14 @@ class MainActivity : AppCompatActivity() {
                 val frenchName = sourates.getString("nom_sourate")
                 val phoneticName = sourates.getString("nom_phonetique")
                 val arabicName = sourates.getString("nom")
-                var sourateObject = SourateObject(positionSourate, frenchName,phoneticName, arabicName)
+                val sourateObject = SourateObject(positionSourate, frenchName,phoneticName, arabicName)
 
                 listOfSourate.add(sourateObject)
             }
-
         }
         catch (e: Exception){
             Log.e("Error", e.toString())
         }
-
         return jsonObject
     }
-
 }

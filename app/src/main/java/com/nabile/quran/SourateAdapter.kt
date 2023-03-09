@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import org.json.JSONObject
 
 class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<SourateObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -36,15 +35,16 @@ class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<
             val intent = Intent(context, SourateActivity::class.java)
             intent.putExtra("sourate",sourate.positionSourate.toString())
             intent.putExtra("title",sourate.frenchName +" ("+sourate.phoneticName+")")
+            intent.putExtra("verse","1")
             ContextCompat.startActivity(context, intent, null)
         }
 
     }
 
     class SourateViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val sourateIndex = view.findViewById<TextView>(R.id.sourateIndex)
-        val sourateNameInFrench = view.findViewById<TextView>(R.id.sourateNameInFrench)
-        val sourateNameInArabic = view.findViewById<TextView>(R.id.sourateNameInArabic)
+        val sourateIndex: TextView = view.findViewById(R.id.sourateIndex)
+        val sourateNameInFrench: TextView = view.findViewById(R.id.sourateNameInFrench)
+        val sourateNameInArabic: TextView = view.findViewById(R.id.sourateNameInArabic)
 
     }
 }
