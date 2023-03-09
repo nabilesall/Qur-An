@@ -14,7 +14,7 @@
         android:background="@drawable/bg_top_bar"
         android:text="@string/sourates"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

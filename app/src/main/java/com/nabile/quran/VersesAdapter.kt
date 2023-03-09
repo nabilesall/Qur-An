@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class VersesAdapter (val context: Context, private val listOfVerse: ArrayList<VerseObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class VersesAdapter (private val context: Context, private val listOfVerse: ArrayList<VerseObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return VerseViewHolder(
             LayoutInflater.from(context).inflate(R.layout.verse_item_adapter, parent, false)
@@ -29,9 +29,9 @@ class VersesAdapter (val context: Context, private val listOfVerse: ArrayList<Ve
     }
 
     class VerseViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val verseIndex = view.findViewById<TextView>(R.id.verseIndex)
-        val verseArabic = view.findViewById<TextView>(R.id.verseInArabic)
-        val verseFrench = view.findViewById<TextView>(R.id.verseInFrench)
+        val verseIndex: TextView = view.findViewById(R.id.verseIndex)
+        val verseArabic: TextView = view.findViewById(R.id.verseInArabic)
+        val verseFrench: TextView = view.findViewById(R.id.verseInFrench)
 
     }
 }

@@ -1,6 +1,5 @@
 package com.nabile.quran
 
-import android.icu.text.CaseMap.Title
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -11,10 +10,11 @@ import java.io.InputStream
 
 class SourateActivity : AppCompatActivity() {
 
-    lateinit var listOfVerse : ArrayList<VerseObject>
-    lateinit var versesAdapter : VersesAdapter
-    lateinit var title : String
-    var souratePosition : Int = -10
+    private lateinit var listOfVerse : ArrayList<VerseObject>
+    private lateinit var versesAdapter : VersesAdapter
+    private lateinit var title : String
+    private var souratePosition : Int = -10
+    private var verseToRead : Int = -10
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +23,7 @@ class SourateActivity : AppCompatActivity() {
 
         title = intent?.extras?.getString("title").toString()
         souratePosition = intent?.extras?.getString("sourate").toString().toInt()
+        verseToRead = intent?.extras?.getString("verse").toString().toInt()
 
         sourateTileBar.text = title
 
@@ -32,6 +33,9 @@ class SourateActivity : AppCompatActivity() {
         versesRecyclerView.layoutManager = LinearLayoutManager(this)
 
         getVerses(souratePosition - 1)
+        if (verseToRead != -10){
+            versesRecyclerView.smoothScrollToPosition(verseToRead-1)
+        }
 
         versesAdapter.notifyDataSetChanged()
 
@@ -40,10 +44,10 @@ class SourateActivity : AppCompatActivity() {
     private fun getVerses(souratePosition: Int) {
         val inputStream : InputStream = assets.open("quran.json")
         val json = inputStream.bufferedReader().use { it.readText() }
-        var jsonObject = JSONObject(json)
+        val jsonObject = JSONObject(json)
 
         try {
-            var jsonArray = jsonObject.getJSONArray("sourates")
+            val jsonArray = jsonObject.getJSONArray("sourates")
             val currentSourate = jsonArray.getJSONObject(souratePosition)
             val verses = currentSourate.getJSONArray("versets")
             for (i in 0..verses.length()){
@@ -52,16 +56,28 @@ class SourateActivity : AppCompatActivity() {
                 val verseNumber = verse.getInt("position_ds_sourate")
                 val verseInFrench = verse.getString("text")
                 val verseInArabic = verse.getString("text_arabe")
-                var verseObject = VerseObject(verseNumber, verseInArabic, verseInFrench)
+                val verseObject = VerseObject(verseNumber, verseInArabic, verseInFrench)
 
                 listOfVerse.add(verseObject)
             }
 
-
         }catch (e: Exception){
             Log.e("Error", e.toString())
         }
+    }
 
+    override fun onStop() {
+        super.onStop()
+        val layoutManager = versesRecyclerView.layoutManager as LinearLayoutManager
+        val lastVisiblePosition = layoutManager.findLastVisibleItemPosition()
+
+        val sharedPref = applicationContext.getSharedPreferences("savedSourate", MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("title", title)
+        editor.putInt("sourate", souratePosition)
+        editor.putInt("verse", lastVisiblePosition)
+
+        editor.apply()
     }
 
 }
