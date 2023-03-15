@@ -31,3 +31,6 @@ Un lien de téléchargement sera prochainement disponible pour ceux qui le souha
 * Envoyer chaque jour un Ayah comme rappele. Ayah of the Day.  
 * Connaître les heures de prière selon la région.  
 * Notifier les horaires de prière.
+* Consulter le calendrier musulman.  
+* Intégrer des audios pour des sourates 
+* Possibilité de faire des tasbih( chapelet électronique).
