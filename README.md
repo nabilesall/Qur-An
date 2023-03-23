@@ -28,7 +28,7 @@ Un lien de téléchargement sera prochainement disponible pour ceux qui le souha
 
 ### Extensions
 ------------------
-* Envoyer chaque jour un Ayah comme rappele. Ayah of the Day.  
+* Envoyer chaque jour un Ayah comme rappel. Ayah of the Day.  
 * Connaître les heures de prière selon la région.  
 * Notifier les horaires de prière.
 * Consulter le calendrier musulman.  
