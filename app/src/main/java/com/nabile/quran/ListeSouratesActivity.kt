@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nabile.quran.adapter.SourateAdapter
+import com.nabile.quran.objects.SourateObject
 import kotlinx.android.synthetic.main.activity_liste_sourates.*
 import org.json.JSONObject
 import java.io.InputStream

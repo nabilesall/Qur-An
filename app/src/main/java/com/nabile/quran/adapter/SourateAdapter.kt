@@ -1,4 +1,4 @@
-package com.nabile.quran
+package com.nabile.quran.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.nabile.quran.R
+import com.nabile.quran.SourateActivity
+import com.nabile.quran.objects.SourateObject
 
 class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<SourateObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

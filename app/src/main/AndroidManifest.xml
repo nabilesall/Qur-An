@@ -19,6 +19,9 @@
             android:name=".ListeSouratesActivity"
             android:exported="true"/>
         <activity
+            android:name=".ListeAjizaActivity"
+            android:exported="true"/>
+        <activity
             android:name=".ChooseActivity"
             android:exported="true">
             <intent-filter>

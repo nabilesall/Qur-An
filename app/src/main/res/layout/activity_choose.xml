@@ -7,65 +7,102 @@
     android:background="@color/background_color"
     tools:context=".ChooseActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/resumeButton"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:background="#405E53"
-            app:srcCompat="@drawable/baseline_restart_alt_24"
-            android:contentDescription="@string/todo" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ajizaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/resumeButton"
+            app:layout_constraintStart_toStartOf="@+id/sourateButton"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-    </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/ajizaImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@mipmap/icone" />
+        </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/reprendre_la_lecture"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/resumeButton"
-        app:layout_constraintStart_toStartOf="@+id/resumeButton"
-        app:layout_constraintTop_toBottomOf="@+id/resumeButton" />
+        <TextView
+            android:id="@+id/ajizaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/ajiza_tvw"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/ajizaButton"
+            app:layout_constraintStart_toStartOf="@+id/ajizaButton"
+            app:layout_constraintTop_toBottomOf="@+id/ajizaButton" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/sourateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/resumeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:srcCompat="@mipmap/icone"
-            android:contentDescription="@string/todo" />
-    </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="#405E53"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/baseline_restart_alt_24" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/sourates_tvw"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/sourateButton"
-        app:layout_constraintStart_toStartOf="@+id/sourateButton"
-        app:layout_constraintTop_toBottomOf="@+id/sourateButton" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/reprendre_la_lecture"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/resumeButton"
+            app:layout_constraintStart_toStartOf="@+id/resumeButton"
+            app:layout_constraintTop_toBottomOf="@+id/resumeButton" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sourateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="160dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@mipmap/icone" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/sourates_tvw"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/sourateButton"
+            app:layout_constraintStart_toStartOf="@+id/sourateButton"
+            app:layout_constraintTop_toBottomOf="@+id/sourateButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
