@@ -24,4 +24,13 @@ Pour chaque sourate choisie, on a la liste de tous les verset ainsi qu'en en-tê
 Quand on arrête de lire, la sourate ainsi que le numéro du verset sont sauvegardés pour permettre de reprendre la lecture plus tard. 
 
 Cette application est Op. Source et tout le monde peut l'utiliser comme il le souhaite.  
-Un lien de téléchargement sera prochainement disponible pour ceux qui le souhaitent.
+Un lien de téléchargement sera prochainement disponible pour ceux qui le souhaitent.  
+
+### Extensions
+------------------
+* Envoyer chaque jour un Ayah comme rappele. Ayah of the Day.  
+* Connaître les heures de prière selon la région.  
+* Notifier les horaires de prière.
+* Consulter le calendrier musulman.  
+* Intégrer des audios pour des sourates 
+* Possibilité de faire des tasbih( chapelet électronique).
