@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
-    tools:context=".SourateActivity">
+    android:background="@color/background_color">
 
     <TextView
-        android:id="@+id/sourateTileBar"
+        android:id="@+id/sourateTitleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_top_bar"
@@ -23,7 +22,7 @@
         android:id="@+id/versesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/sourateTileBar"
+        android:layout_below="@+id/sourateTitleBar"
         android:layout_alignParentBottom="true"
         android:scrollbars="vertical"
         android:scrollbarSize="10dp"/>

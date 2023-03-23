@@ -29,6 +29,10 @@ class ChooseActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-    }
 
+        ajizaButton.setOnClickListener {
+            val intent = Intent(this, ListeAjizaActivity::class.java)
+            startActivity(intent)
+        }
+    }
 }

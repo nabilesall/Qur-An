@@ -27,7 +27,7 @@ class SourateActivity : AppCompatActivity() {
         souratePosition = intent?.extras?.getString("sourate").toString().toInt()
         verseToRead = intent?.extras?.getString("verse").toString().toInt()
 
-        sourateTileBar.text = title
+        sourateTitleBar.text = title
 
         listOfVerse = ArrayList()
         versesAdapter = VersesAdapter(this, listOfVerse)
