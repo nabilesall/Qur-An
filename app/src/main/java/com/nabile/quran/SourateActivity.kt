@@ -52,7 +52,7 @@ class SourateActivity : AppCompatActivity() {
             val jsonArray = jsonObject.getJSONArray("sourates")
             val currentSourate = jsonArray.getJSONObject(souratePosition)
             val verses = currentSourate.getJSONArray("versets")
-            for (i in 0..verses.length()){
+            for (i in 0 until verses.length()){
                 val verse = verses.getJSONObject(i)
 
                 val verseNumber = verse.getInt("position_ds_sourate")
@@ -75,6 +75,7 @@ class SourateActivity : AppCompatActivity() {
 
         val sharedPref = applicationContext.getSharedPreferences("savedSourate", MODE_PRIVATE)
         val editor = sharedPref.edit()
+        editor.putString("typeLecture", "sourate")
         editor.putString("title", title)
         editor.putInt("sourate", souratePosition)
         editor.putInt("verse", lastVisiblePosition)

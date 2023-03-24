@@ -18,16 +18,28 @@ class ChooseActivity : AppCompatActivity() {
 
         resumeButton.setOnClickListener {
             val intent = Intent(this, SourateActivity::class.java)
+            val intentJuzu = Intent(this, AjizaActivity::class.java)
+
             val sharedPref = applicationContext.getSharedPreferences("savedSourate", MODE_PRIVATE)
+            val typeLecture = sharedPref.getString("typeLecture", "")
             val sourate = sharedPref.getInt("sourate", -10)
             val verse = sharedPref.getInt("verse", -10)
             val title = sharedPref.getString("title", "Sourate")
 
-            intent.putExtra("sourate", sourate.toString())
-            intent.putExtra("verse", verse.toString())
-            intent.putExtra("title", title)
+            if (typeLecture == "sourate") {
+                intent.putExtra("sourate", sourate.toString())
+                intent.putExtra("verse", verse.toString())
+                intent.putExtra("title", title)
 
-            startActivity(intent)
+                startActivity(intent)
+            }
+            else if( typeLecture == "juzu"){
+                intentJuzu.putExtra("sourate", sourate.toString())
+                intentJuzu.putExtra("verse", verse.toString())
+                intentJuzu.putExtra("title", title)
+
+                startActivity(intentJuzu)
+            }
         }
 
         ajizaButton.setOnClickListener {
