@@ -37,7 +37,6 @@ class ListeAjizaActivity : AppCompatActivity() {
         try {
             val jsonArray = jsonObject.getJSONArray("ajiza")
 
-            //jsonArray.length()
             for (i in 0 until jsonArray.length()){
                 val ajiza = jsonArray.getJSONObject(i)
                 val positionAjiza = ajiza.getInt("position")
