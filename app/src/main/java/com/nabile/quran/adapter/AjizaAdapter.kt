@@ -34,12 +34,12 @@ class AjizaAdapter(val context: Context, private val listOfAjiza: ArrayList<Ajiz
         ajizaViewHolder.ajizaNameInFrench.text = ajiza.ajizaFrenchName
         ajizaViewHolder.ajizaFromTo.text = ajiza.ajizaFromTo
 
-        ajizaViewHolder.itemView.setOnClickListener {
+        /*ajizaViewHolder.itemView.setOnClickListener {
             val intent = Intent(context, AjizaActivity::class.java)
             intent.putExtra("ajizaPosition",ajiza.positionAjiza.toString())
             intent.putExtra("title",ajiza.ajizaFrenchName)
             ContextCompat.startActivity(context, intent, null)
-        }
+        }*/
     }
 
     class AjizaViewHolder(view: View) : RecyclerView.ViewHolder(view){

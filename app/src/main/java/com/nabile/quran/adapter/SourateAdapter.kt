@@ -46,7 +46,7 @@ class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<
 
     class SourateViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val sourateIndex: TextView = view.findViewById(R.id.sourateIndex)
-        val sourateNameInFrench: TextView = view.findViewById(R.id.ajizaNameInFrench)
+        val sourateNameInFrench: TextView = view.findViewById(R.id.sourateNameInFrench)
         val sourateNameInArabic: TextView = view.findViewById(R.id.sourateNameInArabic)
     }
 }

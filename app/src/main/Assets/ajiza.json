@@ -1,7 +1,7 @@
 {
   "ajiza" : [
     {
-      "positon" : 1,
+      "position" : 1,
       "nom" : "Alif Lam Meem",
       "fromTo" : "Al-Faatiha 1 - Al-Baqara 141",
       "versets" : [
@@ -1786,7 +1786,7 @@
     {
       "position": 2,
       "nom": "Sayaqoolu",
-      "formTo" : "Al-Baqara 142 - Al-Baqara 252",
+      "fromTo" : "Al-Baqara 142 - Al-Baqara 252",
       "versets" : [
         {
           "position": 149,
@@ -26688,9 +26688,6 @@
           "text_arabe": "فَٱنطَلَقَا حَتَّىٰٓ إِذَا لَقِيَا غُلَٰمًۭا فَقَتَلَهُۥ قَالَ أَقَتَلْتَ نَفْسًۭا زَكِيَّةًۢ بِغَيْرِ نَفْسٍۢ لَّقَدْ جِئْتَ شَيْـًۭٔا نُّكْرًۭا"
         }
       ]
-    },
-    {
-
     }
   ]
 }

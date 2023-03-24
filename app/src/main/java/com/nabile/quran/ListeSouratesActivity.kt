@@ -38,7 +38,7 @@ class ListeSouratesActivity : AppCompatActivity() {
         try {
             val jsonArray = jsonObject.getJSONArray("sourates")
 
-            for (i in 0..jsonArray.length()){
+            for (i in 0 until jsonArray.length()){
                 val sourates = jsonArray.getJSONObject(i)
                 val positionSourate = sourates.getInt("position")
                 val frenchName = sourates.getString("nom_sourate")

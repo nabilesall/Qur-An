@@ -1,11 +1,14 @@
 package com.nabile.quran
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nabile.quran.adapter.VersesAdapter
 import com.nabile.quran.objects.VerseObject
 import kotlinx.android.synthetic.main.activity_sourate.*
+import org.json.JSONObject
+import java.io.InputStream
 
 
 class AjizaActivity : AppCompatActivity() {
@@ -30,5 +33,24 @@ class AjizaActivity : AppCompatActivity() {
         versesRecyclerView.layoutManager = LinearLayoutManager(this)
         //methode pour remplir la liste des sourates
         versesAdapter.notifyDataSetChanged()
+    }
+
+    private fun getVerses(ajizaPosition: Int) {
+        val inputStream : InputStream = assets.open("ajiza.json")
+        val json = inputStream.bufferedReader().use { it.readText() }
+        val jsonObject = JSONObject(json)
+
+        try {
+            val jsonArray = jsonObject.getJSONArray("ajiza")
+            val currentSourate = jsonArray.getJSONObject(ajizaPosition)
+            val verses = currentSourate.getJSONArray("versets")
+            for (i in 0..verses.length()){
+                val verse = verses.getJSONObject(i)
+
+
+            }
+        }catch (e: Exception){
+            Log.e("Error", e.toString())
+        }
     }
 }
