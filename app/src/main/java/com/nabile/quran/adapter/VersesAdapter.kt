@@ -21,12 +21,15 @@ class VersesAdapter (private val context: Context, private val listOfVerse: Arra
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val sharedP = context.getSharedPreferences("savedSettings", Context.MODE_PRIVATE)
+        val toFrench = sharedP.getBoolean("toFrench", true)
         val verse = listOfVerse[position]
 
         val verseViewHolder = holder as VerseViewHolder
         verseViewHolder.verseIndex.text = verse.positionVerse.toString()
         verseViewHolder.verseArabic.text = verse.verseInArabic
-        verseViewHolder.verseFrench.text = verse.verseInFrench
+        if (toFrench) verseViewHolder.verseFrench.text = verse.verseInFrench
+        else verseViewHolder.verseFrench.visibility = View.GONE
     }
 
     class VerseViewHolder(view: View) : RecyclerView.ViewHolder(view){

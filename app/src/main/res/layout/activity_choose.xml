@@ -16,12 +16,44 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/resumeButton"
+            app:layout_constraintStart_toStartOf="@+id/resumeButton"
+            app:layout_constraintTop_toBottomOf="@+id/resumeButton">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="#405E53"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/baseline_settings_24" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/settingsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/parametres"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/settingsButton"
+            app:layout_constraintStart_toStartOf="@+id/settingsButton"
+            app:layout_constraintTop_toBottomOf="@+id/settingsButton" />
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/ajizaButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="20dp"
-            app:layout_constraintEnd_toEndOf="@+id/resumeButton"
+            app:layout_constraintEnd_toEndOf="@+id/sourateButton"
             app:layout_constraintStart_toStartOf="@+id/sourateButton"
             app:layout_constraintTop_toBottomOf="@+id/textView2">
 
