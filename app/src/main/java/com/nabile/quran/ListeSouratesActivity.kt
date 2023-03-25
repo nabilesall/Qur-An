@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nabile.quran.adapter.SourateAdapter
+import com.nabile.quran.objects.SourateObject
 import kotlinx.android.synthetic.main.activity_liste_sourates.*
 import org.json.JSONObject
 import java.io.InputStream
@@ -25,18 +27,20 @@ class ListeSouratesActivity : AppCompatActivity() {
 
         getData()
         sourateAdapter.notifyDataSetChanged()
-
     }
 
-    private fun getData(): JSONObject {
+
+    /**
+     * Get the list of Sourates from the json file
+     */
+    private fun getData(){
         val inputStream : InputStream = assets.open("quran.json")
         val json = inputStream.bufferedReader().use { it.readText() }
         val jsonObject = JSONObject(json)
 
         try {
             val jsonArray = jsonObject.getJSONArray("sourates")
-
-            for (i in 0..jsonArray.length()){
+            for (i in 0 until jsonArray.length()){
                 val sourates = jsonArray.getJSONObject(i)
                 val positionSourate = sourates.getInt("position")
                 val frenchName = sourates.getString("nom_sourate")
@@ -50,6 +54,5 @@ class ListeSouratesActivity : AppCompatActivity() {
         catch (e: Exception){
             Log.e("Error", e.toString())
         }
-        return jsonObject
     }
 }

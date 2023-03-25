@@ -10,21 +10,20 @@ import kotlinx.android.synthetic.main.activity_sourate.*
 import org.json.JSONObject
 import java.io.InputStream
 
-class SourateActivity : AppCompatActivity() {
+class AjizaActivity : AppCompatActivity() {
 
     private lateinit var listOfVerse : ArrayList<VerseObject>
     private lateinit var versesAdapter : VersesAdapter
     private lateinit var title : String
-    private var souratePosition : Int = -10
+    private var ajizaPosition : Int = -10
     private var verseToRead : Int = -10
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sourate)
 
         title = intent?.extras?.getString("title").toString()
-        souratePosition = intent?.extras?.getString("sourate").toString().toInt()
+        ajizaPosition = intent?.extras?.getString("sourate").toString().toInt()
         verseToRead = intent?.extras?.getString("verse").toString().toInt()
 
         sourateTitleBar.text = title
@@ -34,7 +33,7 @@ class SourateActivity : AppCompatActivity() {
         versesRecyclerView.adapter = versesAdapter
         versesRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        getVerses(souratePosition - 1)
+        getVerses(ajizaPosition - 1)
         if (verseToRead != -10){
             versesRecyclerView.smoothScrollToPosition(verseToRead-1)
         }
@@ -43,17 +42,17 @@ class SourateActivity : AppCompatActivity() {
 
 
     /**
-     * Get the verses of the current Sourate
+     * Get the verses of the current juzu
      */
-    private fun getVerses(souratePosition: Int) {
-        val inputStream : InputStream = assets.open("quran.json")
+    private fun getVerses(ajizaPosition: Int) {
+        val inputStream : InputStream = assets.open("ajiza.json")
         val json = inputStream.bufferedReader().use { it.readText() }
         val jsonObject = JSONObject(json)
 
         try {
-            val jsonArray = jsonObject.getJSONArray("sourates")
-            val currentSourate = jsonArray.getJSONObject(souratePosition)
-            val verses = currentSourate.getJSONArray("versets")
+            val jsonArray = jsonObject.getJSONArray("ajiza")
+            val currentJuzu = jsonArray.getJSONObject(ajizaPosition)
+            val verses = currentJuzu.getJSONArray("versets")
             for (i in 0 until verses.length()){
                 val verse = verses.getJSONObject(i)
 
@@ -64,11 +63,11 @@ class SourateActivity : AppCompatActivity() {
 
                 listOfVerse.add(verseObject)
             }
-
         }catch (e: Exception){
             Log.e("Error", e.toString())
         }
     }
+
 
     override fun onStop() {
         super.onStop()
@@ -77,12 +76,11 @@ class SourateActivity : AppCompatActivity() {
 
         val sharedPref = applicationContext.getSharedPreferences("savedSourate", MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putString("typeLecture", "sourate")
+        editor.putString("typeLecture", "juzu")
         editor.putString("title", title)
-        editor.putInt("sourate", souratePosition)
+        editor.putInt("sourate", ajizaPosition)
         editor.putInt("verse", lastVisiblePosition)
 
         editor.apply()
     }
-
 }

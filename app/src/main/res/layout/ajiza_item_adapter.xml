@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_item_sourate"
     android:padding="5dp">
 
     <TextView
-        android:id="@+id/sourateIndex"
+        android:id="@+id/ajizaIndex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/sourateNameInArabic"
+        android:id="@+id/ajizaNameInFrench"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
+        android:layout_marginStart="10dp"
+        android:maxWidth="200dp"
+        android:text=""
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ajizaIndex"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/sourateNameInFrench"
+        android:id="@+id/ajizaFromTo"
         android:layout_width="wrap_content"
-        android:maxWidth="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:text=""
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sourateIndex"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/ajizaNameInFrench"
+        app:layout_constraintTop_toBottomOf="@+id/ajizaNameInFrench" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,13 @@
             android:name=".SourateActivity"
             android:exported="true"/>
         <activity
+            android:name=".AjizaActivity"
+            android:exported="true"/>
+        <activity
             android:name=".ListeSouratesActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ListeAjizaActivity"
             android:exported="true"/>
         <activity
             android:name=".ChooseActivity"
