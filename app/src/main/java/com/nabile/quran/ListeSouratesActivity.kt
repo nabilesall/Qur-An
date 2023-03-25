@@ -27,17 +27,19 @@ class ListeSouratesActivity : AppCompatActivity() {
 
         getData()
         sourateAdapter.notifyDataSetChanged()
-
     }
 
-    private fun getData(): JSONObject {
+
+    /**
+     * Get the list of Sourates from the json file
+     */
+    private fun getData(){
         val inputStream : InputStream = assets.open("quran.json")
         val json = inputStream.bufferedReader().use { it.readText() }
         val jsonObject = JSONObject(json)
 
         try {
             val jsonArray = jsonObject.getJSONArray("sourates")
-
             for (i in 0 until jsonArray.length()){
                 val sourates = jsonArray.getJSONObject(i)
                 val positionSourate = sourates.getInt("position")
@@ -52,6 +54,5 @@ class ListeSouratesActivity : AppCompatActivity() {
         catch (e: Exception){
             Log.e("Error", e.toString())
         }
-        return jsonObject
     }
 }

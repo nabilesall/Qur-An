@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_sourate.*
 import org.json.JSONObject
 import java.io.InputStream
 
-
 class AjizaActivity : AppCompatActivity() {
 
     private lateinit var listOfVerse : ArrayList<VerseObject>
@@ -41,6 +40,10 @@ class AjizaActivity : AppCompatActivity() {
         versesAdapter.notifyDataSetChanged()
     }
 
+
+    /**
+     * Get the verses of the current juzu
+     */
     private fun getVerses(ajizaPosition: Int) {
         val inputStream : InputStream = assets.open("ajiza.json")
         val json = inputStream.bufferedReader().use { it.readText() }

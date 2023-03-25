@@ -27,13 +27,11 @@ class VersesAdapter (private val context: Context, private val listOfVerse: Arra
         verseViewHolder.verseIndex.text = verse.positionVerse.toString()
         verseViewHolder.verseArabic.text = verse.verseInArabic
         verseViewHolder.verseFrench.text = verse.verseInFrench
-
     }
 
     class VerseViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val verseIndex: TextView = view.findViewById(R.id.verseIndex)
         val verseArabic: TextView = view.findViewById(R.id.verseInArabic)
         val verseFrench: TextView = view.findViewById(R.id.verseInFrench)
-
     }
 }

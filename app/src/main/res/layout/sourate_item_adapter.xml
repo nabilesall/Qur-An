@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_item_sourate"
-    android:padding="15dp">
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/sourateIndex"

@@ -11,11 +11,13 @@ class ChooseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose)
 
+        // Get the List of Sourates
         sourateButton.setOnClickListener {
             val intent = Intent(this, ListeSouratesActivity::class.java)
             startActivity(intent)
         }
 
+        // Resume the last lecture
         resumeButton.setOnClickListener {
             val intent = Intent(this, SourateActivity::class.java)
             val intentJuzu = Intent(this, AjizaActivity::class.java)
@@ -42,6 +44,7 @@ class ChooseActivity : AppCompatActivity() {
             }
         }
 
+        // Get the List of Juz
         ajizaButton.setOnClickListener {
             val intent = Intent(this, ListeAjizaActivity::class.java)
             startActivity(intent)

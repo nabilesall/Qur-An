@@ -41,7 +41,6 @@ class SourateAdapter(val context: Context, private val listOfSourate: ArrayList<
             intent.putExtra("verse","1")
             ContextCompat.startActivity(context, intent, null)
         }
-
     }
 
     class SourateViewHolder(view: View) : RecyclerView.ViewHolder(view){

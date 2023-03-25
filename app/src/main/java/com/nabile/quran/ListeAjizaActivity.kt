@@ -29,6 +29,10 @@ class ListeAjizaActivity : AppCompatActivity() {
         ajizaAdapter.notifyDataSetChanged()
     }
 
+
+    /**
+     * Get the list of Ajiza from the json file
+     */
     private fun getData() {
         val inputStream : InputStream = assets.open("ajiza.json")
         val json = inputStream.bufferedReader().use { it.readText() }
@@ -36,7 +40,6 @@ class ListeAjizaActivity : AppCompatActivity() {
 
         try {
             val jsonArray = jsonObject.getJSONArray("ajiza")
-
             for (i in 0 until jsonArray.length()){
                 val ajiza = jsonArray.getJSONObject(i)
                 val positionAjiza = ajiza.getInt("position")
@@ -52,4 +55,3 @@ class ListeAjizaActivity : AppCompatActivity() {
         }
     }
 }
-

@@ -38,11 +38,13 @@ class SourateActivity : AppCompatActivity() {
         if (verseToRead != -10){
             versesRecyclerView.smoothScrollToPosition(verseToRead-1)
         }
-
         versesAdapter.notifyDataSetChanged()
-
     }
 
+
+    /**
+     * Get the verses of the current Sourate
+     */
     private fun getVerses(souratePosition: Int) {
         val inputStream : InputStream = assets.open("quran.json")
         val json = inputStream.bufferedReader().use { it.readText() }
