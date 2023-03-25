@@ -6,4 +6,7 @@
     <string name="sourates_tvw">Sourates</string>
     <string name="ajiza_tvw">Ajiza</string>
     <string name="ajiza">Ajiza</string>
+    <string name="version">version 0.1</string>
+    <string name="parametres">Paramètres</string>
+    <string name="traduction">Version française</string>
 </resources>

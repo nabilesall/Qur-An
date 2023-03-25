@@ -49,5 +49,11 @@ class ChooseActivity : AppCompatActivity() {
             val intent = Intent(this, ListeAjizaActivity::class.java)
             startActivity(intent)
         }
+
+        // Settings
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
