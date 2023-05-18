@@ -1,5 +1,5 @@
 # Qur-An
-Le Coran en Arabe et en Français. (Télécharger ici)[https://drive.google.com/file/d/1vzr1Siog0c8Y6CV2Gppt0ksaWh4nZ55Y/view?usp=drivesdk]  
+Le Coran en Arabe et en Français. [Télécharger ici](https://drive.google.com/file/d/1vzr1Siog0c8Y6CV2Gppt0ksaWh4nZ55Y/view?usp=drivesdk)  
 J'ai développé cette application pour que je puisse lire le Coran sans interruption et/ou sans dérangement.   
 Ma principale motivation pour développer cette application est que les autres applications mettaient beaucoup de publicités et c'était désagréable à la fin.  
 L'utilisation reste très simple. 
